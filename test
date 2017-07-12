@@ -1,0 +1,24 @@
+/**
+ *
+ * @author ScotPfleghaar
+ */
+
+public class ReverseNumber {
+ 
+        public static void main(String[] args) {
+                int number = 123456789; //Insert any number
+                int reversedNumber = 0;
+                int i = 0;
+               
+                while(number > 0){
+                        i = number%10;
+                        reversedNumber = reversedNumber * 10 + i;
+                        number = number/10;
+                }
+                System.out.println("Reversed Number: " + reversedNumber);
+        }
+}
+ 
+/*
+Reversed Number: 987654321
+*/
