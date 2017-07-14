@@ -433,7 +433,7 @@
 //     return "friends";
 //   }
 //   sword = "sting";
-//   dwarf = function (){
+//   dwarf = function (){ 
 //     return "axe";
 //   };
 //   fall = "Fly you fools!";
@@ -787,6 +787,67 @@
 // lighthouseRock.addBulb("Sight Slayer", 1800);
 // lighthouseRock.addBulb("Burner of Souls", 7500);
 
+// Enumerations 
+// var rockSpearguns = {
+//   Sharpshooter: {barbs: 2, weight: 10, heft: "overhand"},
+//   Pokepistol: {barbs: 4, weight: 8, heft: "shoulder"},
+//   Javelinjet: {barbs: 4, weight: 12, heft: "waist"},
+//   Firefork: {barbs: 6, weight: 8, heft: "overhand"},
+//   "The Impaler": {barbs: 1, weight: 30, heft: "chest"}
+// };
+
+// // build listGuns
+// function listGuns(guns){
+//   for (speargun in guns){
+//   	console.log(speargun);
+//   }
+// }
+
+// // call listGuns and pass in rockSpearguns
+// listGuns(rockSpearguns);
+
+
+// Enumeration II
+
+// var rockSpearguns = {
+//   Sharpshooter: {barbs: 2, weight: 10, heft: "overhand"},
+//   Pokepistol: {barbs: 4, weight: 8, heft: "shoulder"},
+//   Javelinjet: {barbs: 4, weight: 12, heft: "waist"},
+//   Firefork: {barbs: 6, weight: 8, heft: "overhand"},
+//   "The Impaler": {barbs: 1, weight: 30, heft: "chest"}
+// };
+
+// function listGuns(guns) {
+//   for (var speargun in guns) {
+//     // modify the log message here
+//     console.log("Behold! " + speargun + ", with " +
+//                 guns[speargun]["heft"] + " heft!");
+//   }
+// }
+
+
+// Enumeration III
+
+// var rockSpearguns = {
+//   Sharpshooter: {barbs: 2, weight: 10, heft: "overhand"},
+//   Pokepistol: {barbs: 4, weight: 8, heft: "shoulder"},
+//   Javelinjet: {barbs: 4, weight: 12, heft: "waist"},
+//   Firefork: {barbs: 6, weight: 8, heft: "overhand"},
+//   "The Impaler": {barbs: 1, weight: 30, heft: "chest"}
+// };
+
+// rockSpearguns["listGuns"] = function() {
+//   for (var property in this) {
+//     if (this[property]["heft"] !== undefined) {
+//       console.log("Behold! " + property + ", with " +
+//                   this[property]["heft"] + " heft!");
+//     }
+//   }
+// };
+
+// rockSpearguns["listGuns"]();
+
+
 ///////////////// prototypes ////////////
 
 // String.prototype.countAll = function (letter){
@@ -904,63 +965,1181 @@
 
 
 // Prototypes IV
-var canyonCows = [
-  {name: "Bessie", type: "cow", hadCalf: "Burt"},
-  {name: "Donald", type: "bull", hadCalf: null},
-  {name: "Esther", type: "calf", hadCalf: null},
-  {name: "Burt", type: "calf", hadCalf: null},
-  {name: "Sarah", type: "cow", hadCalf: "Esther"},
-  {name: "Samson", type: "bull", hadCalf: null},
-  {name: "Delilah", type: "cow", hadCalf: null}
-];
+// var canyonCows = [
+//   {name: "Bessie", type: "cow", hadCalf: "Burt"},
+//   {name: "Donald", type: "bull", hadCalf: null},
+//   {name: "Esther", type: "calf", hadCalf: null},
+//   {name: "Burt", type: "calf", hadCalf: null},
+//   {name: "Sarah", type: "cow", hadCalf: "Esther"},
+//   {name: "Samson", type: "bull", hadCalf: null},
+//   {name: "Delilah", type: "cow", hadCalf: null}
+// ];
 
-var valleyCows = [
-  {name: "Danielle", type: "cow", hadCalf: null},
-  {name: "Brittany", type: "cow", hadCalf: "Christina"},
-  {name: "Jordan", type: "bull", hadCalf: null},
-  {name: "Trevor", type: "bull", hadCalf: null},
-  {name: "Christina", type: "calf", hadCalf: null},
-  {name: "Lucas", type: "bull", hadCalf: null}
-];
+// var valleyCows = [
+//   {name: "Danielle", type: "cow", hadCalf: null},
+//   {name: "Brittany", type: "cow", hadCalf: "Christina"},
+//   {name: "Jordan", type: "bull", hadCalf: null},
+//   {name: "Trevor", type: "bull", hadCalf: null},
+//   {name: "Christina", type: "calf", hadCalf: null},
+//   {name: "Lucas", type: "bull", hadCalf: null}
+// ];
 
-var forestCows = [
-  {name: "Legolas", type: "calf", hadCalf: null},
-  {name: "Gimli", type: "bull", hadCalf: null},
-  {name: "Arwen", type: "cow", hadCalf: null},
-  {name: "Galadriel", type: "cow", hadCalf: null},
-  {name: "Eowyn", type: "cow", hadCalf: "Legolas"}
-];
+// var forestCows = [
+//   {name: "Legolas", type: "calf", hadCalf: null},
+//   {name: "Gimli", type: "bull", hadCalf: null},
+//   {name: "Arwen", type: "cow", hadCalf: null},
+//   {name: "Galadriel", type: "cow", hadCalf: null},
+//   {name: "Eowyn", type: "cow", hadCalf: "Legolas"}
+// ];
 
-var badlandsCows = [
-  {name: "Voldemort", type: "bull", hadCalf: null},
-  {name: "Maleficent", type: "cow", hadCalf: null},
-  {name: "Ursula", type: "cow", hadCalf: "Draco"},
-  {name: "Draco", type: "calf", hadCalf: null},
-  {name: "Joker", type: "bull", hadCalf: null},
-  {name: "Chucky", type: "calf", hadCalf: null},
-  {name: "Samara", type: "cow", hadCalf: "Chucky"}
-];
+// var badlandsCows = [
+//   {name: "Voldemort", type: "bull", hadCalf: null},
+//   {name: "Maleficent", type: "cow", hadCalf: null},
+//   {name: "Ursula", type: "cow", hadCalf: "Draco"},
+//   {name: "Draco", type: "calf", hadCalf: null},
+//   {name: "Joker", type: "bull", hadCalf: null},
+//   {name: "Chucky", type: "calf", hadCalf: null},
+//   {name: "Samara", type: "cow", hadCalf: "Chucky"}
+// ];
 
-Object.prototype.noCalvesYet = function() {
-  if (this.type == "cow" && this.hadCalf == null) {
-    return true;
-  } else {
-    return false;
-  }
-};
+// Object.prototype.noCalvesYet = function() {
+//   if (this.type == "cow" && this.hadCalf == null) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// };
 
-Array.prototype.countForBreeding = function() {
-  var numToBreed = 0;
-  for (var i = 0; i < this.length; i++) {
-    if (this[i].noCalvesYet()) {
-      numToBreed++;
-    }
-  }
-  return numToBreed;
-};
+// Array.prototype.countForBreeding = function() {
+//   var numToBreed = 0;
+//   for (var i = 0; i < this.length; i++) {
+//     if (this[i].noCalvesYet()) {
+//       numToBreed++;
+//     }
+//   }
+//   return numToBreed;
+// };
 
-// set up your numPriorityCows variable
-var numPriorityCows = (canyonCows.countForBreeding() + valleyCows.countForBreeding() + forestCows.countForBreeding() + badlandsCows.countForBreeding());
+// // set up your numPriorityCows variable
+// var numPriorityCows = (canyonCows.countForBreeding() + valleyCows.countForBreeding() + forestCows.countForBreeding() + badlandsCows.countForBreeding());
 
-// alert the correct message with the total
-alert("Herd-merger has indicated " + numPriorityCows + " cows of top breeding priority.");
+// // alert the correct message with the total
+// alert("Herd-merger has indicated " + numPriorityCows + " cows of top breeding priority.");
+
+
+
+// Inheritance and Constructors:
+
+// var shoe = {size: 6, gender: "women", constructor: "slipper"};
+// var magicShoe = Object.create(shoe);
+// console.log(shoe);
+// console.log(magicShoe);
+// Object.prototype.isPrototypeOf(shoe); // returns True
+// Object.prototype.isPrototypeOf(magicShoe); // returns True
+// shoe.isPrototypeOf(magicShoe); // True because shoe is the mother prototype of prototype magicShoe
+
+// Generic Object:
+//var shoe = {size: undefined, gender: undefined, constructor: undefined}; // not ideal
+
+// It is better to use constructor
+// function Shoe (shoeSize, shoeColor, forGender, constructStyle){
+//   this.size = shoeSize;
+//   this.color = shoeColor;
+//   this.gender = forGender;
+//   this.construction = constructStyle;
+// }
+// // Created a prototype because all shoes do the following:
+// Shoe.prototype = {
+//   putOn: function(){console.log("Your "+this.construction +"'s are on!")},
+//   takeOff: function(){alert(console.log("Your "+this.construction +"'s are off!"))}
+// };
+
+// var beachShoe = new Shoe (10, "blue", "woman", "flipflop");
+// beachShoe.straps = 2;
+// beachShoe.putOn();
+
+
+// Creation with Prototypes I
+// var genericPost = {
+//   x: 0,
+//   y: 0,
+//   postNum: undefined,
+//   connectionsTo: undefined,
+//   sendRopeTo: function(connectedPost) {
+//     if (this.connectionsTo === undefined) {
+//       var postArray = [];
+//       postArray.push(connectedPost);
+//       this.connectionsTo = postArray;
+//     } else {
+//       this.connectionsTo.push(connectedPost);
+//     }
+//   }
+// };
+
+// // create post1 and post2
+// var post1 = Object.create(genericPost);
+// var post2 = Object.create(genericPost);
+
+// // modify the post properties
+// post1.x = -2;
+// post1.y = 4;
+// post1.postNum = 1;
+// post2.x = 5;
+// post2.y = 1;
+// post2.postNum = 2;
+
+
+
+// // connect the posts together
+// post1.sendRopeTo(post2);
+// post2.sendRopeTo(post1);
+
+
+//Creation with Prototypes II
+// var genericPost = {
+//   x: 0,
+//   y: 0,
+//   postNum: undefined,
+//   connectionsTo: undefined,
+//   sendRopeTo: function(connectedPost) {
+//     if (this.connectionsTo === undefined) {
+//       var postArray = [];
+//       postArray.push(connectedPost);
+//       this.connectionsTo = postArray;
+//     } else {
+//       this.connectionsTo.push(connectedPost);
+//     }
+//   }
+// };
+
+// // create post8, post9, and post10
+// var post8 = Object.create(genericPost);
+// var post9 = Object.create(genericPost);
+// var post10 = Object.create(genericPost);
+
+// // assign property values and make connections
+// post8.x = 0;
+// post8.y = -3;
+// post8.postNum = 8;
+
+// post9.x = 6;
+// post9.y = 8;
+// post9.postNum = 9;
+
+// post10.x = -2;
+// post10.y = 3;
+// post10.postNum = 10;
+
+// post8.sendRopeTo(post10);
+// post10.sendRopeTo(post8);
+// post9.sendRopeTo(post10);
+// post10.sendRopeTo(post9);
+
+// post9.numBirds = 0;
+// post10.weathervane = "N";
+// post8.lightsOn = false;
+// post10.lightsOn = false;
+
+// Constructor I
+
+// function Fencepost(x, y, postNum) {
+//   this.x = x;
+//   this.y = y;
+//   this.postNum = postNum;
+//   this.connectionsTo = [];
+//   this.sendRopeTo = function(connectedPost) {
+//     this.connectionsTo.push(connectedPost);
+//   };
+// }
+
+// // create post18, post19, and post20
+// var post18 = new Fencepost(-3,4,18);
+// var post19 = new Fencepost(5,-1,19);
+// var post20 = new Fencepost(-2,10,20);
+
+// // establish post connections
+
+// post18.sendRopeTo(post20);
+// post20.sendRopeTo(post18);
+// post18.sendRopeTo(post19);
+// post19.sendRopeTo(post18);
+
+//Constructor 2;
+
+// function Fencepost(x, y, postNum) {
+//   this.x = x;
+//   this.y = y;
+//   this.postNum = postNum;
+//   this.connectionsTo = [];
+// }
+
+// Fencepost.prototype = {
+//     movePost: function(x, y) {
+//     this.x = x;
+//     this.y = y;
+//     },
+//     removeRope: function(removeTo) {
+//     var temp = [];
+//     for (var i = 0; i < this.connectionsTo.length; i++) {
+//       if (this.connectionsTo[i].postNum != removeTo) {
+//         temp.push(this.connectionsTo[i]);
+//       }
+//     }
+//     this.connectionsTo = temp;
+//     },
+//     sendRopeTo: function(connectedPost) {
+//     this.connectionsTo.push(connectedPost);
+//   }
+// //   putOn: function(){console.log("Your "+this.construction +"'s are on!")},
+// //   takeOff: function(){alert(console.log("Your "+this.construction +"'s are off!"))}
+// };
+
+// Object.prototype.findOwnerOfProperty = function (propName){
+//   var currentObject = this;
+//   while(currentObject !== null){
+//     if(currentObject.hasOwnProperty(propName)){
+//       return currentObject;
+//     } else {
+//       currentObject = currentObject.getPrototypeOf();
+//     }
+//   }
+// };
+
+// Overriding Prototypal Methods I
+// Fencepost.prototype.valueOf = function() {
+//   return Math.sqrt(this.x * this.x + this.y * this.y);
+// };
+
+// Overriding Prototypal Methods II
+// function Fencepost(x, y, postNum) {
+//   this.x = x;
+//   this.y = y;
+//   this.postNum = postNum;
+//   this.connectionsTo = [];
+// }
+
+// Fencepost.prototype = {
+//   sendRopeTo: function(connectedPost) {
+//     this.connectionsTo.push(connectedPost);
+//   },
+//   removeRope: function(removeTo) {
+//     var temp = [];
+//     for (var i = 0; i < this.connectionsTo.length; i++) {
+//       if (this.connectionsTo[i].postNum != removeTo) {
+//         temp.push(this.connectionsTo[i]);
+//       }
+//     }
+//     this.connectionsTo = temp;
+//   },
+//   movePost: function(x, y) {
+//     this.x = x;
+//     this.y = y;
+//   },
+//   valueOf: function() {
+//   return Math.sqrt(this.x * this.x +
+//                   this.y * this.y);
+//   }
+// };
+
+// // override the toString method
+// Fencepost.prototype.toString = function() {
+//   var list = "";
+//   for (var i = 0; i < this.connectionsTo.length; i++) {
+//     list += this.connectionsTo[i].postNum + "\n";
+//   }
+//   return "Fence post #" + this.postNum + ":\n" +
+//         "Connected to posts:\n" + list +
+//         "Distance from ranch: " + this.valueOf() + " yards";
+// };
+
+
+//Ternary Conditionals
+
+// var isArthur = true;
+// var isKing = false;
+// var isArcher = true;
+// var weapon;
+// var helmet;
+
+//This works however...
+// var weapon;
+// if (isArthur){
+//   weapon = "Excalibur";
+// }else{
+//   weapon = "Longsword";
+// }
+
+// This is a better practice;
+//var weapon = isArthur?"Excalibur":"Longsword";
+
+//console.log("Current weapon: " + (isArthur&&isKing?"Excalibur":"Longsword"));
+
+// Ternary Conditionals with actions:
+//isArthur&&isKing?alert("Hail, King Author!"):alert("Charge on, ye knight!");
+
+//Ternary Conditionals with functions: Note: there are paratheses behind each function in order to Immediately Invoked them.
+// isArthur && isKing ? function(){
+//   alert('Hail, Author, the King!');
+//   console.log("Raise Excalibur!");
+// }():function(){
+//   alert("Charge on, ye Knight!");
+//   console.log("Current Weapon: Longsword");
+// }();
+
+//Ternary Conditionals can also take multiple actions:
+//isArthur && isKing?(weapon = "Excalibur", helmet="Goosewhite"):isArcher?(weapon = "Longbow", helmet = "Mail Helm"):(weapon= "Longsword", helmet="Iron Helm");
+
+//Ternary Conditionals can also be nested:
+//isArthur && isKing?(weapon = "Excalibur", helmet="Goosewhite"):isArcher?(weapon = "Longbow", helmet = "Mail Helm"):(weapon= "Longsword", helmet="Iron Helm")
+
+// Ternary Conditionals I:
+// var allPacked = true;
+// var readyToGo = true;
+// var adventureTime;
+
+// adventureTime = allPacked && readyToGo ?
+
+//   function() {
+//     return 'Adventure time is now!';
+//   }()
+//   :
+//   function() {
+//     return 'Adventuring has been postponed!';
+//   }();
+
+
+// Ternary Conditionals II
+//var isHero = true;
+// var character;
+
+// if (isHero) {
+//   character = 'Dhuun';
+// } else {
+//   character = 'Pesky Gnat';
+// }
+//character = isHero ? 'Dhuun' : 'Pesky Gnat';
+
+
+//Logical Assignment I
+// var armory = {addSword: function(sword){
+//   //this.swords = this.swords ? this.swords:[]; // If the swords exists great, if not create array.
+//   this.swords = this.swords || []; // even shorter way to do the above
+//   this.swords.push(sword); //Add the sword that wasnt there before.
+// }
+// };
+
+// More Examples:
+// var result1 = 42 || undefined;
+// console.log(result1);
+
+// var result2 = ["sweet", "array"] || 0;
+// console.log(result2);
+
+// var result3 = {type: "ring", stone:"diamond"} || "";
+// console.log(result3);
+
+// var result4 = "King" || "Arthur";
+// console.log(result4);
+
+// var result5 = null || ""; //Returns last false item;
+// console.log(result5);
+
+// var lost;
+// lost = 4 || undefined;
+//Reflecting on this assignment for a bit, you realize that the undefined value will never even be examined. The name for this phenomenon in logical evaluation is called SHORT-CIRCUIT.
+
+// var lost;
+// var darkness = true;
+// lost = undefined || darkness;
+
+// var pocketStuff = ['Dragon Tooth', 'Adventure Diary', 'Silver Tiger Coin'];
+// var cluesToThePast = pocketStuff || [];
+// getMyIdentity(cluesToThePast);
+
+// function getMyIdentity(memories) {
+//   var identity = (memories.indexOf('Adventure Diary') >= 0) ? 'The One Who Learns' : undefined;
+//   return identity || "unknown";
+// }
+
+//Logical Assignment II
+
+//The && operator takes the rightmost "true" value or the first "false" value;
+// var result1 = undefined && 42;
+// console.log(result1);
+
+// var result2 = 0 && ["Sweet","Array"];
+// console.log(result2);
+
+//The AND logical operator lets us to check multiple conditions before allowing assignemnt:
+// armory = {
+//   swords: ["Broadsword","Katana","Claymore","Scimitar"],
+// };
+// armory.retriveSword = function (request){
+//   return (this.swords.indexOf(request) >= 0)?this.swords.splice(this.swords.indexOf(request), 1)[0]:console.log("No "+request+" in the armory");
+// };
+// var armoryIsOpen = true;
+// var isKnight = true;
+// var weapon = armoryIsOpen && isKnight && armory.retriveSword("Claymore"); // Returns katana only if it is a knight.
+// console.log(weapon);
+// armory.swords.indexOf("Claymore");
+// armory.swords.indexOf("Donut");
+
+// Example of Splice:
+// var soldiers = ["Knights", "Pikeman", "Archers"];
+// soldiers.splice(1,2); // returns [ 'Pikeman', 'Archers' ]
+
+// var aiedraIsConvincing = true;
+// var dhuunIsCurious = true;
+// var beginJourney = aiedraIsConvincing && dhuunIsCurious;
+
+// var strength = true;
+// var fear = false;
+// var surviveThisTrial = strength && !fear;
+
+// var strength = true;
+// var fear = false;
+// var pack = {
+//   food: [ 'carrot',
+//           'mystery meat',
+//           'apple',
+//           'crust of bread',
+//           'spicy dried sausage',
+//           'carrot',
+//           'wedge of sharp cheese',
+//           'jug of milk',
+//           'mystery meat',
+//           'carrot'
+//   ],
+//   addFood: function(foodItem) {
+//     this.food = this.food || [];
+//     this.food.push(foodItem);
+//   },
+//   enoughFood: function(amount) {
+//     return(this.food.length >= amount);
+//   }
+// };
+
+// var surviveThisTrial = strength && !fear && pack.enoughFood(10);
+
+// console.log(surviveThisTrial);
+
+
+// var strength = true;
+// var fear = false;
+// var pack = {
+//   food: [ 'carrot',
+//           'mystery meat',
+//           'apple',
+//           'crust of bread',
+//           'spicy dried sausage',
+//           'carrot',
+//           'wedge of sharp cheese',
+//           'jug of milk',
+//           'mystery meat',
+//           'carrot'
+//   ],
+//   addFood: function(foodItem) {
+//     this.food = this.food || [];
+//     this.food.push(foodItem);
+//   },
+//   enoughFood: function(amount) {
+//     return(this.food.length >= amount);
+//   }
+// };
+// // In the end, will you survive the trial at hand?
+// var surviveThisTrial = strength && !fear && pack.enoughFood(10);
+
+// The Switch Block
+
+//When you see the following: 
+// function Knight (name, regiment) {
+//   this.name = name;
+//   this.regiment = regiment;
+//   if(regiment == 1){
+//     this.weapon = "Broadsword";
+//   } else if(regiment == 2){
+//     this.weapon = "Claymore";
+//   } else if(regiment == 3){
+//     this.weapon = "Longsword";
+//   } else if(regiment == 4){
+//     this.weapon = "Mace";
+//   } else if(regiment == 5){
+//     this.weapon = "War Hammer";
+//   } else if(regiment == 6){
+//     this.weapon = "Battle Axe";
+//   } else if(regiment == 7){
+//     this.weapon = "Halberd";
+//   } else if(regiment == 8){
+//     this.weapon = "Morning Star";
+//   }
+// } 
+// var soldier = new Knight("Timothy", 2);
+// console.log(soldier.weapon);
+
+//Recreate to a Switch
+// function Knight (name, regiment) {
+//   this.name = name;
+//   this.regiment = regiment;
+//   switch (regiment) {
+//     case 1: this.weapon = "Broadsword";
+//     break;
+//     case 2: this.weapon = "Claymore";
+//     break;
+//     case 3: this.weapon = "Longsword";
+//     break;
+//     case 4: this.weapon = "Mace";
+//     break;
+//     case 5: this.weapon = "War Hammer";
+//     break;
+//     case 6: this.weapon = "Battle Axe";
+//     break;
+//     case 7: this.weapon = "Halberd";
+//     break;
+//     case 8: this.weapon = "Morning Star";
+//     break;
+//   } 
+// }
+
+// var soldier = new Knight("Richard", 6);
+// console.log(soldier.weapon);
+
+// uses of fallthrough:
+// function Knight (name, regiment) {
+//   this.name = name;
+//   this.regiment = regiment;
+//   switch (regiment) {
+//     case 1: this.weapon = "Broadsword";
+//     break;
+//     case 2: this.weapon = "Claymore";
+//     break;
+//     case 3: this.weapon = "Longsword";
+//     break;
+//     case 5: this.weapon = "War Hammer";
+//     break;
+//     case 6: this.weapon = "Battle Axe";
+//     break;
+//     case 4:
+//     case 7: 
+//     case 8: this.weapon = "Morning Star"; // allows case 4,7,8 to all use Morning Star
+//     break;
+//     case "King": this.weapon = "Excalibur";
+//     break;
+//     default: console.log(name + " has an incorrect regiment. \nNo weapon assigned!" );
+//   } 
+// }
+
+//Another example of fallthrough: each rank recieves the ranks proir amount of jewels
+// function ceremonialDagger(knight, rank){
+//   this.length = 8;
+//   this.owner = knight;
+//   switch(rank){
+//     case "King": this.diamonds = 1;
+//     case "High Constable": this.amethyst = 2;
+//     case "Field Marshal": this.sapphires = 4;
+//     case "Captain": this.emeralds = 1;
+//     case "Knight": this.rubies = 6;
+//   }
+// }
+// var knightsDagger = new ceremonialDagger("Jerome", "Knight");
+// console.log(knightsDagger);
+// var marshalsDagger = new ceremonialDagger("Tim", "Field Marshal");
+// console.log(marshalsDagger);
+// var kingsDagger = new ceremonialDagger("Arthur", "King");
+// console.log(kingsDagger);
+
+// function aiedrasMutterings(lampsLit) {
+//   var aiedrasWords;
+//   switch (lampsLit) {
+//     case 1: aiedrasWords = 'Darkness, there is so much darkness still shrouding the land.';
+//     case 2: aiedrasWords = 'A beacon of hope, these two lamps are, but two more still await.';
+//     case 3: aiedrasWords = 'Nearly it is complete, twilight breaking, is that a song I hear?';
+//     case 4: aiedrasWords = 'It is done, a new age has begun, a new dawn has risen.';
+//   }
+//   return aiedrasWords;
+// }
+
+// alert(aiedrasMutterings(0));
+
+// function aiedrasMutterings(lampsLit) {
+//   var aiedrasWords;
+//   switch (lampsLit) {
+//     case 1: aiedrasWords = 'Darkness, there is so much darkness still shrouding the land.';
+//     case 2: aiedrasWords = 'A beacon of hope, these two lamps are, but two more still await.';
+//     case 3: aiedrasWords = 'Nearly it is complete, twilight breaking, is that a song I hear?';
+//     case 4: aiedrasWords = 'It is done, a new age has begun, a new dawn has risen.';
+//     default: aiedrasWords = "Shall we live in Infinite Midnight always?";
+//   }
+//   return aiedrasWords;
+// }
+// alert(aiedrasMutterings(3));
+
+// From this:
+// function sansTemple(direction) {
+//   var happensNext;
+//     if (direction == 'right hallway') {
+//       happensNext = 'You find a door, it is locked. You head back from where you came.'
+//     } else if (direction == 'left hallway') {
+//       happensNext = 'You find a door, it is locked. You head back from where you came.'
+//     } else if (direction == 'forward hallway') {
+//       happensNext = 'You find a door, it is locked. You head back from where you came.'
+//     } else if (direction == 'lower tunnel') {
+//       happensNext = 'You find a door, it is locked. You head back from where you came.'
+//     } else if (direction == 'hidden door') {
+//       happensNext = 'You go through the door into a room. A small, very dark room, that smells of dust and sulfur...'
+//     } else {
+//       happensNext = 'You stand there, gaping, not moving. Aiedra wonders, are you alive?'
+//     }
+//   return happensNext;
+// }
+// sansTemple();
+
+// // To this:
+// function sansTemple(direction) {
+//   var happensNext;
+//   switch(direction){
+//     case 'right hallway': happensNext = 'You find a door, it is locked. You head back from where you came.';
+//     break;
+//     case 'left hallway':  happensNext = 'You find a door, it is locked. You head back from where you came.';
+//     break;
+//     case 'forward hallway': happensNext = 'You find a door, it is locked. You head back from where you came.';
+//     break;
+//     case 'lower tunnel': happensNext = 'You find a door, it is locked. You head back from where you came.';
+//     break;
+//     case 'hidden door': happensNext = 'You go through the door into a room. A small, very dark room, that smells of dust and sulfur...';
+//     break;
+//     default: happensNext = 'You stand there, gaping, not moving. Aiedra wonders, are you alive?';
+//     }
+//     return happensNext;
+// }
+// sansTemple();
+
+
+//fallthrough to fix redundancy:
+// function sansTemple(direction) {
+//   var happensNext;
+//   switch (direction) {
+//     case 'right hallway': 
+//     case 'left hallway':
+//     case 'forward hallway':
+//     case 'lower tunnel': happensNext = 'You find a door, it is locked. You head back from where you came.';
+//     break;
+//     case 'hidden door': happensNext = 'You go through the door into a room. A small, very dark room, that smells of dust and sulfer...';
+//     break;
+//     default: happensNext = 'You stand there, gaping, not moving. Aiedra wonders, are you alive?';
+//   }
+//   return happensNext;
+// }
+// sansTemple();
+
+//Final: 
+// function CaretakerMedallion(caretaker) {
+//   // var bronzeBanner;
+//   // var circumscribedSquare;
+//   // var innerRing;
+//   switch(caretaker){
+//     case 'PixelPriest': this.bronzeBanner = 'Omne initium est a pixel';
+//     case 'FontFriar': this.circumscribedSquare = 'Venit Comic Sans';
+//     case 'StyleSensei': this.innerRing = 'Ars autem est in aeternum';
+//   }
+// }
+
+// // Example uses of our CaretakerMedallion function
+// // Note the properties for each example
+
+// var medallion1 = new CaretakerMedallion('PixelPriest');
+// console.log(medallion1);
+// /*
+//   CaretakerMedallion {
+//     bronzeBanner: 'Omne initium est a pixel', 
+//     circumscribedSquare: 'Venit Comic Sans', 
+//     innerRing: 'Ars autem est in aeternum'
+//   }
+// */
+
+// var medallion2 = new CaretakerMedallion('StyleSensei'); 
+// console.log(medallion2);
+
+// /*
+//   CaretakerMedallion {
+//     innerRing: 'Ars autem est in aeternum'
+//   }
+// */
+
+
+///////// Loop Optimizations //////////
+
+// // A common for-loop scenario
+// treasureChest = {
+//   goldCois: 10000,
+//   magicalItem: "Crown of Speed",
+//   necklaces: ["ruby", "pearl", "sapphire", "diamond"],
+//   openLid: function (){
+//     console.log("Creeeeeeeeak!");
+//   }
+// };
+// console.log("You've found the following necklaces:");
+// // var x = treasureChest.necklaces.length; // This is optimizing becuse it no longer needs to go find length in each iteration of the loop
+// // for(var i = 0, x = treasureChest.necklaces.length ; i< x ;i++){ //Note the location of x as the controlling parameter
+// //   console.log(treasureChest.necklaces[i]);
+// // } // Avoid Repetitive Access At Depth by using the above syntax.
+
+// //Here is even one step further:
+// var list = treasureChest.necklaces;
+// for(var i = 0, x = treasureChest.necklaces.length ; i< x ;i++){ //Note the location of x as the controlling parameter
+//   console.log(list[i]); //Note: list is already accessed above, no need to go through treasureChest then to necklaces
+// }
+
+// Array.prototype.killTheInsolent = function(){};
+// Array.prototype.countPopulace = function(){};
+// Array.prototype.countUndeadPopulace = function(){};
+// Array.prototype.insecticide = function(){};
+// Array.prototype.shadowProvider = function(){};
+
+// var bitersBog = {
+//   critters: ['Nipping Global Variable', 
+//             'Sneaky For-in', 
+//             'Bulging Blocking Script']
+// }
+
+// populationGetter(bitersBog); 
+
+// function populationGetter(location) {
+//   var list = '';
+//   // What sort of loop should go here?
+//   // Answer: for loop
+//   return list.trim();
+// }
+
+// var bitersBog = {
+//     critters: ['Nipping Global Variable', 
+//               'Sneaky For-in', 
+//               'Bulging Blocking Script']
+// };
+
+// populationGetter(bitersBog); 
+
+// function populationGetter(location) {
+//   var list = '';
+//   var numCritters = location.critters.length;
+//   for (var i = 0; i < numCritters; i++) {
+//     list += location.critters[i];
+//   }
+//   return list.trim();
+// }
+
+// var bitersBog = {
+//   critters: ['Nipping Global Variable', 
+//             'Sneaky For-in', 
+//             'Bulging Blocking Script']
+// };
+
+// populationGetter(bitersBog); 
+
+// function populationGetter(location) {
+//   var list = '';
+//   // var numCritters = location.critters.length;
+//   for (var i = 0, numCritters = location.critters.length; i < numCritters; i++) {
+//     list += location.critters[i];
+//   }
+//   return list.trim();
+// }
+
+// var InvertedPeninsula = function() {
+//   this.inhabitants = [
+//     {
+//       name: 'Sir Charles',
+//       race: 'Human'
+//     },
+//     {
+//       name: 'Ealei',
+//       race: 'Elf'
+//     }
+//   ];
+//   // Adds an extra humans method property to the inhabitants array to return all Humans
+//   this.inhabitants.humans = function() { /* returns all Human inhabitants */ };
+// };
+
+// // Create a new invertedPeninsula
+// var invertedPeninsula = new InvertedPeninsula();
+
+// // Log the name of each invertedPeninsula inhabitant
+// for (var i in invertedPeninsula.inhabitants) {
+//   console.log(invertedPeninsula.inhabitants[i].name);
+// }
+// // The problem with the above is how many times the for loops executes, one to many is this form.
+
+
+// // The following is not ideal:
+// // Create a new invertedPeninsula
+// var invertedPeninsula = new InvertedPeninsula();
+// // Log the name of each invertedPeninsula inhabitant
+// for (var i in invertedPeninsula.inhabitants) {
+//   console.log(invertedPeninsula.inhabitants[i].name);
+// }
+
+// //here is the fix to optimize:
+// var invertedPeninsula = new InvertedPeninsula();
+// // Log the name of each invertedPeninsula inhabitant
+// for (var i = 0, x = invertedPeninsula.inhabitants.length, list = invertedPeninsula.inhabitants; i < x; i++) {
+//   console.log(list[i].name);
+// }
+
+
+//////////// Script Execution//////////////
+
+/// Consider async for better loadtime.
+//  the best location for a <script> tag, if it is a very large script file that will take much time to load and process is at he bottom is the body.
+
+////////////Short Performance Tips////////////
+
+
+// We can improve the following using Inheritance:
+//Consider building a prototype for each of the methods in the following
+// function SignalFires(ID, startingLogs){
+//   this.fireID = ID;
+//   this.logsLeft = startingLogs;
+
+// Take the following methods and create a prototype
+// this.addLogs = function(numLogs){
+//   this.logsLeft += numLogs;
+// };
+// this.lightsFire = function(){
+// alert("Whooooosh!");
+// };
+// this.smokeSignal = function (message){
+//   if (this.logsLeft < this.message.length / 10){
+//     alert("Not enough logs for the current message!");
+//   } else {
+//     this.lightsFire();
+//     var x = this.message.length;
+//     for(var i = 0; i<x;i++){
+//       alert(this.message[i]);
+//       if(i % 10 === 0 && i !== 0){
+//         this.logsLeft--;
+//       }
+//     }
+//   }
+// };
+// }
+
+// By creating the prototype we no longer need to load these methods for each SignalFires creation.
+// SignalFires.prototype = {
+//   addLogs: function(numLogs){
+//     this.logsLeft += numLogs;
+//   },
+//   lightsFire: function(){
+//   alert("Whooooosh!");
+//   },
+//   smokeSignal: function (message){
+//     if (this.logsLeft < message.length / 10){
+//       alert("Not enough logs for the current message!");
+//     } else {
+//       this.lightsFire();
+//       var x = message.length;
+//       for(var i = 0; i<x;i++){
+//         alert(message[i]);
+//         if(i % 10 === 0 && i !== 0){
+//           this.logsLeft--;
+//         }
+//       }
+//     }
+//   }
+// };
+
+// var fireOne = new SignalFires(1, 20);
+// var fireTwo = new SignalFires(2, 18);
+// var fireThree = new SignalFires(3, 24);
+
+// fireOne.addLogs(8);
+// fireTwo.addLogs(10);
+// fireThree.addLogs(4);
+
+// fireThree.smokeSignal("DANGER");
+
+
+
+
+// //Adding Individual Dom Elements is not always speedy
+// //Each new addition to the DOM causes a document "reflow", which can really hinder user experiance
+// //Use a fragment to add conjunct elements, instead of touching the DOM over and over again.
+// var list = document.getElementById("exampleList");
+// var example = ["one","two","three"];
+
+// //This would be the nonoptimized way:
+// for(var i = 0, x = example.length; i<x ; i++){
+//   var element = document.createElement("li");
+//   element.appendChild(document.createTextNode(example[i]));
+//   list.appendChild(element);
+// }
+
+
+// //Here is how we improve
+// var fragment = document.createDocumentFragment(); //Note this new addition
+// for(var i = 0, x = example.length; i<x ; i++){
+//   var element = document.createElement("li");
+//   element.appendChild(document.createTextNode(example[i]));
+//   fragment.appendChild(element); //replace list with fragment
+// }
+// list.appendChild(fragment);//This is also and additional line
+
+// //Note Declare variables as few times as possible.
+// var list = document.getElementById("exampleList");
+// var example = ["one","two","three"];
+// //Should be:
+// var list = document.getElementById("exampleList"), //Note the use of a camma at the end of this line
+//     example = ["one","two","three"];
+//     fragment = document.createDocumentFragment(); 
+//     element; //Also we can declare variables that are on the inside of loops to the outside for speed.
+// for(var i = 0, x = example.length; i<x ; i++){
+//   element = document.createElement("li"); //The variable was created above
+//   element.appendChild(document.createTextNode(example[i]));
+//   fragment.appendChild(element); 
+// }
+// list.appendChild(fragment);
+
+
+// //Consider the Strings:
+// var knight = "Jenna";
+// var action = "Strikes Dragon";
+// var weapon = "Helberd";
+
+// // the += is optimized in most modern browser.
+// var turn = "";
+// turn += knight;
+// turn += action;
+// turn += weapon;
+
+// var newPageBuild = ["<!Doctype hmtl>", "<html>", "<body>","<h1>","***a hundred or more other html elements***","</script>", "</body>","</html>"];
+// var page = "";
+// for(var i = 0, x = newPageBuild.length; i < x; i++){
+//   //page += newPageBuild[i]; //This works, however there is a far better option for optimizing the site.
+//   page = newPageBuild.join("\n"); //This is much faster
+// }
+// console.log(page);
+
+// var list = document.getElementById('population'),
+//     inhabitants = ['Nipping Global Variable', 'Sneaky For-in', 'Bulging Blocking Script'],
+//     fragment = document.createDocumentFragment();
+
+// for (var i = 0, x = inhabitants.length; i < x; i++) {
+//   var element = document.createElement('li');
+//   element.appendChild(document.createTextNode(inhabitants[i]));
+//   fragment.appendChild(element);
+// }
+
+// list.appendChild(fragment);
+
+// // What is the fastest way to merge this array into one jumbo string?
+// var array = ['The', 'Inverted', 'Peninsula', 'reminds', 'you', 'of', 'something', 'just', 'at', 'the', 'fringe', ',', 'just', 'out', 'of', 'grasp', '.'];
+// // Call the Array prototype's join() method in array
+
+//Using your new knowledge of native methods, merge this array into one sentence. Do it the fastest way you know, and you should be able to accomplish this with a single line.
+// var array = ['The', 'Inverted', 'Peninsula', 'reminds', 'you', 'of', 
+//               'something', 'just', 'at', 'the', 'fringe', ',', 
+//               'just', 'out', 'of', 'grasp', '.'];
+// array.join(" ");
+
+
+
+////////////////////////IMPORTANT!////////////////////////////
+///////////////////Measureing Preformance/////////////////////
+
+// function Knight (name, regiment) {
+//   this.name = name;
+//   this.regiment = regiment;
+//   switch (regiment) {
+//     case 1: this.weapon = "Broadsword";
+//     break;
+//     case 2: this.weapon = "Claymore";
+//     break;
+//     case 3: this.weapon = "Longsword";
+//     break;
+//     case 5: this.weapon = "War Hammer";
+//     break;
+//     case 6: this.weapon = "Battle Axe";
+//     break;
+//     case 4:
+//     case 7: 
+//     case 8: this.weapon = "Morning Star"; // allows case 4,7,8 to all use Morning Star
+//     break;
+//     case "King": this.weapon = "Excalibur";
+//     break;
+//     default: console.log(name + " has an incorrect regiment. \nNo weapon assigned!" );
+//   } 
+// }
+// var firstRegimentNewbs = ["Grimble Horsehead", "Jark Winterborn","Bunder Ropefist"];
+// var firstRegimentKnights = ["*...tons of Knight objects...*"];
+// console.time("Total completion time");
+// console.time("Time to add "+firstRegimentNewbs.length+" Knights"); // console.time(); Starts timer
+// for(var i = 0, x = firstRegimentNewbs.length; i < x; i++){
+//   //var newGuy = new Knight(firstRegimentNewbs[i], 1 no need to call this when we could simply place below
+//   firstRegimentNewbs.push(new Knight(firstRegimentNewbs[i], 1));
+// }
+// console.timeEnd("Time to add "+firstRegimentNewbs.length+" Knights"); //console.timeEnd(); ***Needs to be exact String as above***
+// console.timeEnd("Total completion time"); // NOTE: the timer itself also take processing time. It is also not averaged. it will change slightly.
+
+// var array = ['Inverted Peninsula', ',', 'Inverted Peninsula', ', ', 'I', '—', 'P', '...', 'hmmm', '.'];
+// var internalThoughts = '';
+// console.time("Time");
+// internalThoughts = array.join(' ');
+// console.timeEnd("Time");
+// console.log(internalThoughts);
+
+
+// Array.prototype.killTheInsolent = function(){};
+// Array.prototype.countPopulace = function(){};
+// Array.prototype.countUndeadPopulace = function(){};
+// Array.prototype.insecticide = function(){};
+// Array.prototype.shadowProvider = function(){};
+
+// var invertedPeninsula = {
+//   inhabitants: ['Nipping Global Variable', 'Sneaky For-in', 'Bulging Blocking Script']
+// };
+
+// function populationGetter(){
+//   var population = invertedPeninsula.inhabitants;
+//   var list = "";
+
+// console.time("t");
+//   for(var i = 0, ff = population.length; i < ff; i++){
+//     list += (population[i] + " ");
+//   }
+// console.timeEnd("t");
+
+//   return list.trim();
+// }
+
+// populationGetter();
+
+
+
+////// Measuring Performance II -- Speed Averaging
+
+// var rightNow = new Date(); //January 1st 1970, is the start.
+// console.log(rightNow);
+
+// //Consider this:
+// var startTime = +new Date(); // time in Ms
+// console.log(startTime);
+// var endTime = +new Date();
+// var elapsedTime = endTime - startTime;
+// console.log(elapsedTime);
+
+// //Speed Test Class:
+// function SpeedTest(testImplement, testParams, repetitions){
+//   this.testImplement = testImplement;
+//   this.testParams = testParams;
+//   this.repetitions = repetitions || 10000;
+//   this.average = 0;
+// }
+// SpeedTest.prototype = {
+//   startTest: function (){
+//     var beginTime, endTime, sumTimes = 0;
+//     for(var i = 0, x = this.repetitions; i < x; i++){
+//       beginTime += +new Date();
+//       this.testImplement(this.testParams);
+//       endTime += +new Date();
+//       sumTimes += endTime - beginTime;
+//     }
+//     this.average = sumTimes / this.repetitions;
+//     return console.log("Average execution across "+ this.repetitions + ": " + this.average);
+//   }
+// };
+
+// /////TESTS:
+// function Knight (name, regiment) {
+//   this.name = name;
+//   this.regiment = regiment;
+//   switch (regiment) {
+//     case 1: this.weapon = "Broadsword";
+//     break;
+//     case 2: this.weapon = "Claymore";
+//     break;
+//     case 3: this.weapon = "Longsword";
+//     break;
+//     case 4: this.weapon = "Mace";
+//     break;
+//     case 5: this.weapon = "War Hammer";
+//     break;
+//     case 6: this.weapon = "Battle Axe";
+//     break;
+//     case 7: this.weapon = "Halberd";
+//     break;
+//     case 8: this.weapon = "Morning Star";
+//     break;
+//   } 
+// }
+// var firstRegimentNewbs = ["Gwendolyn",
+// "Amir",
+// "Felix",
+// "Ian",
+// "Herman",
+// "Claire",
+// "Ruby",
+// "Ignacia",
+// "Mary",
+// "Dalton",
+// "Keaton",
+// "Jennifer",
+// "Yeo",
+// "Stewart",
+// "Ali",
+// "Dacey",
+// "Hadassah",
+// "Alana",
+// "Donovan",
+// "Lila",
+// "Cassady",
+// "Cecilia",
+// "Jasmine"];
+// var firstRegimentKnights = ["...tons of Knight Objects..."];
+// var listForTests = [firstRegimentNewbs, firstRegimentKnights];
+// var noBP = function(listOfParams) {
+// //Bad Array: 
+// for(var i = 0; i < listForTests.length; i++){
+//   var newGuy = new Knight(listForTests[0][i]);
+//   listForTests[1].push(newGuy);
+// }
+// };
+
+
+// // //Good array:
+// // for(var i = 0, x = firstRegimentNewbs.length; i < x; i++){
+// //   firstRegimentNewbs.push(new Knight(firstRegimentNewbs[i], 1));
+// // }
+// var noBPTest = new SpeedTest(noBP,listForTests);
+// noBPTest.startTest();
+
+
+
+///////Careful Comparisons
+
+// Strict Equality
+// '4' == 4; //returns true
+// '4' === 4; //returns false
+// true == 1; // true
+// false == 0; // true
+// true === 1; // false
+// false === 0; // false
+// "\n \n \t" == 0; // true
+// "\n \n \t" === 0; // false
+
+
+// Triple Equals
+// function countEntries(KnightResponses, value){
+//   var count = 0, x = KnightResponses.length;
+//   for(var i = 0; i < x ; i++){
+//     if(KnightResponses[i] == value){ // we need triple Equals here
+//       count++;
+//     }
+//   }
+//   return count;
+// }
+// var fields = ["Scot Pfleghaar", "1", "12", true, true, false];
+// var numCompletedTasks = countEntries(fields, true);
+// console.log(numCompletedTasks); // returns 3, should return 2, refer above.
+
+
+function LeatherArmour(bodyStyle, numBuckles, numSpaulders) {
+
+}
