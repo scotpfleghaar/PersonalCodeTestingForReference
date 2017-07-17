@@ -2139,7 +2139,869 @@
 // var numCompletedTasks = countEntries(fields, true);
 // console.log(numCompletedTasks); // returns 3, should return 2, refer above.
 
+//// instanceof:
 
-function LeatherArmour(bodyStyle, numBuckles, numSpaulders) {
+// function Armor (location){
+//   this.location = location;
+// }
+// Armor.prototype = {
+//   putOn: function(){
+//     alert("Your Armor is on");
+//   }
+// };
+// function LeatherArmour (bodyStyle, numBuckles, numSpaulders){
+//   this.bodyStyle = bodyStyle;
+//   this.numBuckles = numBuckles;
+//   this.numSpaulders = numSpaulders;
+// }
+// LeatherArmour.prototype = Object.create(Armor.prototype);
+// function ChainMail(metal, linkDiameter, hasHood, skirtLength){
+//   this.metal = metal;
+//   this.linkDiameter = linkDiameter;
+//   this.hasHood = hasHood;
+//   this.skirtLength = skirtLength;
+// }
+// ChainMail.prototype = Object.create(Armor.prototype);
 
-}
+// var kingsMail = new ChainMail("gold", 2, true, 36);
+// console.log(kingsMail instanceof Armor);
+// function Knight (name, regiment) {
+//   this.name = name;
+//   this.regiment = regiment;
+//   switch (regiment) {
+//     case 1: this.weapon = "Broadsword";
+//     break;
+//     case 2: this.weapon = "Claymore";
+//     break;
+//     case 3: this.weapon = "Longsword";
+//     break;
+//     case 5: this.weapon = "War Hammer";
+//     break;
+//     case 6: this.weapon = "Battle Axe";
+//     break;
+//     case 4:
+//     case 7: 
+//     case 8: this.weapon = "Morning Star"; // allows case 4,7,8 to all use Morning Star
+//     break;
+//     case "King": this.weapon = "Excalibur";
+//     break;
+//     default: console.log(name + " has an incorrect regiment. \nNo weapon assigned!" );
+//   } 
+// }
+
+// var armorList = [ChainMail,LeatherArmour,ChainMail,LeatherArmour];
+// var newbs = [Knight,Knight];
+
+// function assignKnightsArmor (knights, armorAvail){
+//   var x = knights.length;
+//   var y = armorAvail.length;
+//   for(var i = 0; i<x;i++){
+//     for(var j = 0; j < y;j++){
+//       if(armorAvail[j] instanceof ChainMail){
+//         knights[i].armor = armorAvail.splice(j , 1)[0];
+//         y--;
+//         break;
+//       }
+//     }
+//   }
+// }
+// assignKnightsArmor(newbs,armorList);
+
+
+// var nearbyFood = [true, false, 1, 0, '1', '0'];
+
+// function eatBoolean(food) {
+//   var x = food.length;
+//   for (var i = 0; i < x; i++) {
+//     if ( /* Here, the bird needs a condition to check */ ) {
+//       alert('Yummo. Chirp!');
+//     }
+//   }
+// }
+
+// eatBoolean(nearbyFood);
+
+// var strength = true;
+// var fear = false;
+// var pack = {
+//   foodPouch: ['carrot', 'mystery meat', 'apple', 42],
+//   addFood: function(foodItem) {
+//     this.foodPouch = this.foodPouch || [];
+//     this.foodPouch.push(foodItem);
+//   },
+//   gobbleFood: function(foodItem) {
+//     return(this.foodPouch.indexOf(foodItem) >= 0) ?
+//     this.foodPouch.splice(this.foodPouch.indexOf(foodItem), 1)[0] :
+//     alert('Your pack lacks ' + foodItem);
+//   },
+//   feedBird: function(birdFood) {
+//     for (var i = 0; i < this.foodPouch.length; i++) {
+//       if (this.foodPouch[i] == birdFood) {
+//         alert('Feed beggar bird ' + this.foodPouch[i]);
+//       }
+//     }
+//   }
+// };
+
+// pack.feedBird('42');
+
+// function Bird(){}
+// function DatatypeBird(){}
+// function SyntaxBird(){}
+// DatatypeBird.prototype = Object.create(Bird.prototype);
+// SyntaxBird.prototype   = Object.create(Bird.prototype);
+
+// var TryCatchTaster = function(){},
+//     SwitchSnagger  = function(){},
+//     TernaryTracker = function(){};
+
+// TryCatchTaster.prototype = Object.create(SyntaxBird.prototype);
+// SwitchSnagger.prototype  = Object.create(SyntaxBird.prototype);
+// TernaryTracker.prototype = Object.create(SyntaxBird.prototype);
+
+// var NumberNommer = function(){};
+// NumberNommer.prototype = Object.create(DatatypeBird.prototype);
+
+// var aTryCatchTaster = new TryCatchTaster();
+// var aSwitchSnagger  = new SwitchSnagger();
+// var aTernaryTracker = new TernaryTracker();
+// var aNumberNommer   = new NumberNommer();
+
+// var duneInhabitants = [aNumberNommer, aTryCatchTaster, 
+//                       aSwitchSnagger, aTernaryTracker];
+
+// var count = 0;
+// for(var i = 0; i < duneInhabitants.length; i++) {
+//   if (duneInhabitants[i] instanceof SyntaxBird) {
+//     count++;
+//   }
+// }
+
+// function Bird(){}
+// function DatatypeBird(){}
+// function SyntaxBird(){}
+// DatatypeBird.prototype = Object.create(Bird.prototype);
+// SyntaxBird.prototype   = Object.create(Bird.prototype);
+
+// var TryCatchTaster = function(){},
+//     SwitchSnagger  = function(){},
+//     TernaryTracker = function(){};
+
+// TryCatchTaster.prototype = Object.create(SyntaxBird.prototype);
+// SwitchSnagger.prototype  = Object.create(SyntaxBird.prototype);
+// TernaryTracker.prototype = Object.create(SyntaxBird.prototype);
+
+// var NumberNommer = function(){},
+//     StringSeeker = function(){},
+//     BooleanBiter = function(){};
+
+// NumberNommer.prototype = Object.create(DatatypeBird.prototype);
+// StringSeeker.prototype = Object.create(DatatypeBird.prototype);
+// BooleanBiter.prototype = Object.create(DatatypeBird.prototype);
+
+// var duneInhabitants = [NumberNommer, StringSeeker,
+//   TryCatchTaster, SwitchSnagger, TernaryTracker, BooleanBiter];
+
+
+//////Exception Handling
+//var alarm = "Dragons Approach!";
+//alert(alarm);
+
+// // the try block:
+// try {
+//   alert(alarm);
+// } catch (error){
+//   alert("Uh Oh.... \n" + error);
+// }
+
+// // Error Handling with specified errors.
+// var list = "sasd";
+// try {
+//   var newHallOfFame = ['Dask Frotering', 'Render Tallborn'];
+//   if (list === undefined){
+//     throw new ReferenceError();
+//   }
+//   if ((list instanceof Array) === false){
+//     throw new TypeError();
+//   }
+//   list.concat(newHallOfFame);
+// } catch(error){
+//   if (error instanceof ReferenceError){
+//     alert(error + '\n' + "The hof roster does not exist as \"list\"!\n" + "Check for relocation in master document.");
+//   }
+//   if (error instanceof TypeError){
+//     alert(error + "\n" + "Alas, \"list\" exists, but is not longer an Array. \n"+"Check for a disastrous overwrite!");
+//   }
+// }
+// finally {
+//   console.log(list);
+// }
+
+// function changeInnerHTMLByIdOrExisting(id,update,existing){
+//   try {
+//     var newElement;
+//     document.getElementById(id).innerHTML = update;
+//   } catch (error){
+//     try{
+//       var elements = document.getElementByTagName("*");
+//       for (var i = 0, x = elements.length; i < x; i++){
+//         if(elements[i].innerHTML === existing){
+//           elements[i].innerHTML = update;
+//           is = elements[i].id;
+//           break;
+//         }
+//         if(i === x){
+//           throw new Error("An existing element" + " was not found");
+//         }
+//       }
+//     } catch(error2){
+//       alert(error2.massage + "\nCreating new text node.");
+//       newElement = document.createTextNode(update);
+//     }
+//   }
+//   finally{
+//     if(newElement !== undefined){
+//       console.log("Returning new" + " text node..");
+//       return newElement;
+//     } else {
+//       console.log("Modified element \""+(id || existing)+ "\" with inner HTML \"" + update + ".");
+//     }
+//   }
+// }
+
+
+// function Bird(){}
+// function DatatypeBird(){}
+// function SyntaxBird(){}
+// DatatypeBird.prototype   = Object.create(Bird.prototype);
+// SyntaxBird.prototype     = Object.create(Bird.prototype);
+
+// TryCatchTaster.prototype = Object.create(SyntaxBird.prototype);
+
+// var NumberNommer = function(){};
+// NumberNommer.prototype = Object.create(DatatypeBird.prototype);
+
+// var duneInhabitants = [NumberNommer, StringSeeker, TryCatchTaster, 
+//                       SwitchSnagger, TernaryTracker, BooleanBiter];
+
+
+// Pack of goods
+// var pack = {
+//   foodPouch: ['carrot', 'mystery meat', 'apple', 42],
+//   addFood: function(foodItem) {
+//     this.foodPouch = this.foodPouch || [];
+//     this.foodPouch.push(foodItem);
+//   },
+//   feedBird: function(bird) {
+//     var food = bird.birdFood,
+//         foodIndex = this.foodPouch.indexOf(food);
+//     // If the exact food we want is not in the array,
+//     // check if the type of food is there.
+//     if (foodIndex === -1) {
+//       throw new ReferenceError('Bird food given is not available.');      
+//     }
+//     bird.fed = true;
+//   }
+// };
+
+// // Parent Bird Class
+// function Bird() {}
+
+// // SyntaxBird Inherits From Parent Bird
+// function SyntaxBird() {}
+// SyntaxBird.prototype = Object.create(Bird.prototype);
+
+// var LoopLover = function(birdFood) {
+//   this.birdFood = birdFood;
+//   this.fed = false;
+// };
+// LoopLover.prototype = Object.create(SyntaxBird.prototype);
+
+// DatatypeBird Inherits From Parent Bird
+// function DatatypeBird() {}
+// DatatypeBird.prototype = Object.create(Bird.prototype);
+
+// var NumberNommer = function(birdFood){
+//   this.birdFood = birdFood;
+// };
+// NumberNommer.prototype = Object.create(DatatypeBird.prototype);
+
+// // bird variables below inherit from above prototype chain
+// var numba = new NumberNommer('42');
+// var loopy = new LoopLover('loops');
+// var tryCatcher = new LoopLover('la-de');
+
+// // array of all the inhabitants
+// var duneInhabitants = [numba, loopy, tryCatcher];
+
+// // loop through duneInhabitants and if Bird call feedBird()
+// for (var i = 0; i < duneInhabitants.length; i++) {
+//   try {
+//     pack.feedBird(duneInhabitants[i]);
+//   } catch(error){
+//     console.log(duneInhabitants[i]+" was not fed.");
+//   }
+// }
+
+
+//////////////// Stuff that SUCKS! ///////////////////////
+// JavaScripts "with" keyword is somewhat unreliable and often expensive, so it is generally avoided in practice.
+
+// //What is does: 
+// var drawBridge = {
+//   soldiers: 8,
+//   capacity: 20,
+//   open: function(){
+//     alert("RRRRRRRRRRRRBANG!");
+//   }
+// };
+// with(drawBridge){
+//   close = function(){
+//     alert("Close"); // Read only
+//   }
+// }
+
+// // Rather than use with, caching values in a veriable saves lots of time.
+// // var o = castle.keep.drawBridge
+// // than use an if statment.
+
+// /// next
+
+// // JavaScripts "eval" can affect legibility, an ability to debug and performance. 
+// function assignRegimentMotto(number, motto){
+//   eval("regiment"+number+". mottoe ='"+motto+"'");
+// }
+// assignRegimentMotto(2,"The best of the best");
+
+// Might be useful for dynamic code or uncontrollable data, but it's still treating the string as a program to expensively compile.
+// a fix for the above is as follows:
+// function assignRegimentMotto(number, motto){
+//   eval("regiment"+number).motto = motto;
+// }
+// assignRegimentMotto(2,"The best of the best");
+
+//Ultimate Fix:
+// var regiments = [1,2,3,4,5,6];
+// function assignRegimentMotto(number,motto){
+//   regiments[number].motto = motto;
+// }
+//DONT NOT use eval to parse JSON data, regarded as vulnerable and unsafe, because eval evaluates any script.
+//Rather replace eval with JSON.parse(); //only see json data.
+
+// Lastly, just because we can leave curly braces off of a single-statement blocks of code, doesnt mean we should.
+//for example:
+// if(isKing)
+//   weapon = "Excalibur";
+// else 
+//   weapon = "Longsword"; //totally works
+//however
+//for example:
+// var isKing = true;
+// if(isKing)
+//   weapon = "Excalibur";
+// else 
+//   weapon = "Longsword";
+//   alert("Charge!");
+//   removeFromArmory("Longsword"); //does not work the best or at all
+
+
+//////////Number Nonsense////////////
+// console.log(0.1 + 0.2); //Binary floating point values
+// console.log(0.1 + 0.2 + 0.3); // returns 0.6000000000000001
+
+// //One fix:
+// var num = 0.1 + 0.2;
+// console.log(num.toFixed(1)); //toFixed sets the decimal place
+
+// function tax (price, percent){
+//   return(price*percent/100).toFixed(2);
+// }
+//tax(15, 7.8); //returns a string, so use: parseFloat()
+
+// function tax (price, percent){
+//   return parseFloat((price*percent/100).toFixed(2));
+// }
+// tax(15, 7.8);
+
+// //Instead of looking for a floating point number, parseInt() seeks the first available integer at the front of a string;
+// parseInt("88"); // Returns 88
+// parseInt("88 keys on the piano"); // Also returns 88, because 88 is on the front of the string.
+// parseInt("Keys on piano 88"); //returns NaN
+// parseInt("9.85"); //returns 9
+// parseFloat("9.85"); //Returns 9.85
+
+// //Consider:
+// var userAge = "021";
+// parseInt(userAge); // returns 21
+// parseInt(userAge); //however older ec would print 17.
+// // to avoid this always use:
+// parseInt("021", 10); //Note the 10 is what solves this issue no matter what browser the user is using. /radix argument 
+// parseInt() will accept radix values between 2 and 36.
+
+//Using NaN to check if values are actually JS Numbers seems like a good idea, but it will try to kill you.
+
+// typeof NaN; //Returns 'number'
+// console.log(NaN === NaN); // returns false
+// isNaN("42"); //Returns false
+
+// //To avoid the above issues use two verifications:
+// function isThisActuallyANumberDontLie(data){
+//   return (typeof data === "number" && !isNaN(data)); //Note the double check to be complete.
+// }
+// isThisActuallyANumberDontLie(640); //returns true
+// isThisActuallyANumberDontLie("640"); //returns false
+// isThisActuallyANumberDontLie(NaN); //returns false
+//use parse methods.
+
+// var birdFeeder = {
+//   totalFeed: 4,
+//   getFeed: function(feedRequested) {
+//     var returnedFeed = 0;
+//     if (this.totalFeed >= feedRequested) {
+//       returnedFeed = feedRequested;
+//       this.totalFeed -= feedRequested;
+//     } else {
+//       returnedFeed = this.totalFeed;
+//       this.totalFeed = 0;
+//     }
+
+//     return parseFloat(returnedFeed.toFixed(1));
+//   },
+//   fillFeed: function(additionalFeed) {
+//     this.totalFeed += additionalFeed;
+//   }          
+// };
+
+
+/////////////////////////////////////////////////////////////////////////
+///////////////////////// Namespacing Basics ////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+/*
+-JavaScript files can often create conflicting global elements, overwriting existing, important data.
+-An object that groups and protects related data and methods in JavaScript files is called a Namespace.
+-An application that has multiple files which contain variables with the same name will experience a loss of data in the event of a OVERWRITE, which erases old data in favor of new (and perhaps wrong) data. This occurs specifically when these variables are declared GLOBALLY in multiple files. This error may not be found until RUN-TIME.
+*/
+
+// // Example in cavesofclarity.js file we have:
+// var stalactites = 4235;
+// var stalagmites = 3924;
+// var bats = 345;
+// var treasureChests = 3;
+// var openChest = function() {
+//   treasureChests--;
+//   alert('DA DADADA DAAAAAAA!');
+// };
+
+// //In order to protect this data we should modulize it and do this:
+// var cavesofclarity = {
+//   stalactites: 4235,
+//   stalagmites: 3924,
+//   bats: 345,
+//   treasureChests: 3,
+//   openChest: function() {
+//       this.treasureChests--; //To understand "this" just replace this with "cavesofclarity"
+//       alert('DA DADADA DAAAAAAA!');
+//   }
+// };
+
+/*
+<!DOCTYPE>
+<html>
+  <body>
+    <h1>Caves of Clarity</h1>
+    <script type="text/javascript" src="cavesofclarity.js"></script>
+    <button onclick="openChest();">Open the Secret Treasure!</button> // NOTE THE CHANGE HERE 
+  </body>
+</html>
+/////////////////////////////////////////
+<!DOCTYPE>
+<html>
+  <body>
+    <h1>Caves of Clarity</h1>
+    <script type="text/javascript" src="cavesofclarity.js"></script>
+    <button onclick="cavesofclarity.openChest();">Open the Secret Treasure!</button> // NOTE THE CHANGE HERE 
+  </body>
+</html>
+
+*/
+
+// "A namespace ensures complete privacy of data." - This is False
+
+////// NESTED MODULES:
+
+// //Consider the following:
+// var CAVESOFCLARITY = {
+//   stalactites: 4235,
+//   stalagmites: 3924,
+//   bats: 345,
+//   treasureChests: 3,
+//   openChest: function() {
+//     this.treasureChests--;
+//     alert('DA DADADA DAAAAAAA!');
+//   }
+// };
+// //We can nest modules in our namespaces:
+// var CAVESOFCLARITY = {
+//   stalactites: 4235,
+//   stalagmites: 3924,
+//   bats: 345,
+//   SECRET: {   // NESTED namespace
+//     treasureChests: 3,
+//     openChest: function() {
+//       this.treasureChests--;
+//       alert('DA DADADA DAAAAAAA!');
+//     }
+//   }
+// };
+
+// // If built well, namespaces remain agnostic of other namespaces.
+
+
+
+/////////////////////////////////////////////////////////////////////////
+///////////////////////// Anonymous Closures ////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+//The thing with a namespace is that you have to "hope" that no one else ever uses its name.
+// var ARMORY = {
+//   weaponsList: ["List of weapon Objects"],
+//   armorList: ["List of armor Objects"],
+
+//   makeWeaponRequest: function (){},
+//   makeArmorRequest: function(){},
+
+//   removeWeapon: function(){},
+//   replaceWeapon: function(){},
+//   removeArmor: function(){},
+//   replaceArmor: function(){},
+
+// };
+// // Step for the above code is to wrap the entire set of properties in an anonymous immediately Invoked function expression (IIFE)
+// var ARMORY = (function(){ //Note we wraped it in a function
+//   var weaponsList =  ["List of weapon Objects"];
+//   var armorList = ["List of armor Objects"];
+
+//   var removeWeapon = function(){};
+//   var replaceWeapon = function(){};
+//   var removeArmor = function(){};
+//   var replaceArmor = function(){};
+
+//   return { //*** This is a return object handed to the ARMORY veriable and becomes a namespace *** no one will see the above private properties.
+//     makeWeaponRequest: function (){},
+//     makeArmorRequest: function(){},
+//   };
+
+// })(); //Note Here we place ")()"
+
+// //Example of it working
+// ARMORY.makeWeaponRequest("Excalibur");
+
+//What feature of JavaScript is used to cause some properties to be private, bound only to a surrounding function's local scope, and some properties to be public, accessible by all holders of the namespace? -- **anonymous closures** can be used to cause some properties to be private and some properties to be public.
+//PRIVATE properties are CREATED in the local scope of the FUNCTION EXPRESSION. PUBLIC properties are built within the OBJECT which is then RETURNED to become the NAMESPACE. Access to PRIVATE data is thus possible only because of CLOSURE within the larger MODULE.
+
+
+// // Here is another Exmaple: 
+// var CAVESOFCLARITY = {
+//   stalactites: 4235,
+//   stalagmites: 3924,
+//   bats: 345,
+//   SECRET: {
+//     treasureChests: 3,
+//     openChest: function() {
+//       this.treasureChests--;
+//       alert('DA DADADA DAAAAAAA!');
+//     }
+//   }
+// };
+// // Sould restructured to the following:
+// var CAVESOFCLARITY = (function() {
+//   var  treasureChests = 3;
+//   return {
+//   stalactites: 4235,
+//   stalagmites: 3924,
+//   bats: 345,
+//   SECRET: {
+//     openChest: function() {
+//       treasureChests--;
+//       alert('DA DADADA DAAAAAAA!');
+//     }
+//   }
+//     };
+// })();
+
+
+// // Another Example:
+// //Before
+// var CAVESOFCLARITY = function() {
+
+//   var treasureChests = 3;
+
+
+//   return {
+//     stalactites: 4235,
+//     stalagmites: 3924,
+//     bats: 345,
+//     SECRET: {
+//       openChest: function() {
+//         treasureChests--;
+//         alert('DA DADADA DAAAAAAA!');
+//       }
+//     }
+//   };
+// }();
+// // After:
+// var CAVESOFCLARITY = function() {
+
+//   var treasureChests = 3;
+
+//   var bats = 345;
+//   return {
+//     stalactites: 4235,
+//     stalagmites: 3924,
+//     SECRET: {
+//       openChest: function() {
+//         treasureChests--;
+//         alert('DA DADADA DAAAAAAA!');
+//       }
+//     }
+//   };
+// }();
+// // However the above is useless because Since "bats" are never referenced through the public methods, the private bats datum hold no function purpose
+// //Lets fix that:
+// var CAVESOFCLARITY = function() {
+
+//   var treasureChests = 3;
+//   var bats = 345;
+
+//   return {
+//     stalactites: 4235,
+//     stalagmites: 3924,
+//     SECRET: {
+//       openChest: function() {
+//         treasureChests--;
+//         alert('DA DADADA DAAAAAAA!');
+//       }
+//     },
+//     getBats: function(){
+//       return bats;
+//     }
+//   };
+// }();
+
+/////////////////////////////////////////////////////////////////////////
+///////////////////////////// Global Imports ////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+// //Consider the following: 
+// var wartime = true; //When non-local variables are referenced in a module, the entire length of the scope chain is checked. 
+// // Also, Lengthy namespaces mean the global variables have unclear scope, leading to code that is tough to manage.
+// // While Devs may still need to review code, importing globals creates faster local veriables that are (more) clear in source
+// var ARMORY = (function( war ){ //Add a parameter
+//   var weaponsList =  ["List of weapon Objects"];
+//   var armorList = ["List of armor Objects"];
+
+//   var removeWeapon = function(){};
+//   var replaceWeapon = function(){};
+//   var removeArmor = function(){};
+//   var replaceArmor = function(){};
+
+//   return { 
+//     makeWeaponRequest: function (
+//     // if(war) //Let civilians have weapons
+//       ){},
+//     makeArmorRequest: function(){},
+//   };
+
+// })(wartime); //NOTE HERE FOR GLOBAL IMPORTS, this is where we pass our global veriable.
+
+//If a module references globally-scoped variables, it's a best practice to bring them into the scope of anonymous closure through the use of a specific technique. What is the name for this? ***Global IMPORT***
+
+// // Consider the following without global import: 
+// var LEXICALLAKE = (function() {
+
+//   var depth = 400;
+//   var fish = 1200;
+//   var unknownSleepers = 3;
+
+//   return {
+//     getFish: function() { return fish; },
+//     getDepth: function() { return depth; },
+//     getSleepers: function() {return unknownSleepers; },
+//     awakenSleeper: function() {
+//       alert('Far below, in the deep, something awakens. Row faster.');
+//     },
+//     summonBoat: function() {
+//       if (explorerAnswer === 'agnostic') {
+//         alert('The boat fades into view.');
+//       }
+//       else {
+//         alert('...the lake is silent.');
+//       }
+//     }
+//   };
+// })();
+// // Here is the global import:
+// var LEXICALLAKE = (function(answer) { //NOTE THIS LINE 
+
+//   var depth = 400;
+//   var fish = 1200;
+//   var unknownSleepers = 3;
+
+//   return {
+//     getFish: function() { return fish; },
+//     getDepth: function() { return depth; },
+//     getSleepers: function() {return unknownSleepers; },
+//     awakenSleeper: function() {
+//       alert('Far below, in the deep, something awakens. Row faster.');
+//     },
+//     summonBoat: function() {
+//       if (answer === 'agnostic') { //NOTE THIS LINE 
+//         alert('The boat fades into view.');
+//       }
+//       else {
+//         alert('...the lake is silent.');
+//       }
+//     }
+//   };
+// })(explorerAnswer); //NOTE THIS LINE 
+
+//Your IMPORT ensures clarity of SCOPE within a MODULE. By using a PARAMETER, you protect the GLOBAL data that might have been OVERWRITTEN. All imported data becomes LOCALLY scoped to the ANONYMOUS FUNCTION, to be used in CLOSURE. Thus, when compared with SEARCHING the entire SCOPE CHAIN, IMPORTS are both clearer and faster.
+
+// //Before:
+// var LEXICALLAKE = (function(answer) {
+
+//   var depth = 400;
+//   var fish = 1200;
+//   var unknownSleepers = 3;
+
+//   return {
+//     getFish: function() { return fish; },
+//     getDepth: function() { return depth; },
+//     getSleepers: function() { return unknownSleepers; },
+//     awakenSleeper: function() {
+//       alert('Far below, in the deep, something awakens. Row faster.');
+//     },
+//     summonBoat: function() {
+//       if (answer === 'agnostic') {
+//         alert('The boat fades into view.');
+//       }
+//       else {
+//         alert('...the lake is silent.');
+//       }
+//     },
+
+
+//   };
+// })(explorerAnswer);
+
+// //After:
+
+// var LEXICALLAKE = (function(answer, foundShore) {
+
+//   var depth = 400;
+//   var fish = 1200;
+//   var unknownSleepers = 3;
+
+//   return {
+//     getFish: function() { return fish; },
+//     getDepth: function() { return depth; },
+//     getSleepers: function() { return unknownSleepers; },
+//     awakenSleeper: function() {
+//       alert('Far below, in the deep, something awakens. Row faster.');
+//     },
+//     summonBoat: function() {
+//       if (answer === 'agnostic') {
+//         alert('The boat fades into view.');
+//       }
+//       else {
+//         alert('...the lake is silent.');
+//       }
+//     },
+//     stopSleeper: function(){
+//       foundShore?alert('That which has awoken shall now return to slumber.'):alert('A Sleeper cometh. Abandon hope.');
+//       // if (foundShore){
+//       //   alert('That which has awoken shall now return to slumber.');
+//       // } else {
+//       //   alert('A Sleeper cometh. Abandon hope.');
+//       // }
+//     }
+//   };
+// })(explorerAnswer, madeItAcross);
+
+
+/////////////////////////////////////////////////////////////////////////
+/////////////////////////////  Augmentation  ////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+// // Splitting some functionality between files is very valuable in large bases of code documents
+
+// //Lets say this file is in ARMORY.JS
+// var ARMORY = (function( war ){
+//   var weaponsList =  ["List of weapon Objects"];
+//   var armorList = ["List of armor Objects"];
+
+//   var removeWeapon = function(){};
+//   var replaceWeapon = function(){};
+//   var removeArmor = function(){};
+//   var replaceArmor = function(){};
+
+//   return { 
+//     makeWeaponRequest: function (){
+//       if (war){}//Let civilians have weapons
+//     },
+//     makeArmorRequest: function(){},
+//   };
+
+// })(wartime); 
+
+// //then in WARCHEST.JS
+
+// ARMORY = (function( oldNS ){ //Old NAMESPACE
+//   var oilBarrels = 1000;
+//   var catapults = ["Stoneslinger", "Rockrain", "The Giant's Arm"];
+//   oldNS.assignCatapult = function(regiment){
+//     //Hooks up a regiment with a catapult
+//     //and some oil barrels
+//   };
+//   return oldNS;
+// })(ARMORY); 
+
+// // ***BEWARE*** While using Augmentations previous private data will not be accessible to the new properties.
+// // Augmented properties will have access to a new private state, if used, but not to the other files closed data.
+
+// //What is the term for adding or changing properties in a module after the module has already been built? - Augmentation
+
+// //Another Example:
+// //CAVESOFCLARITY.js:
+// var CAVESOFCLARITY = function() {
+
+//   var treasureChests = 3;
+//   var bats = 345;
+
+//   return {
+//     stalactites: 4235,
+//     stalagmites: 3924,
+//     SECRET: {
+//       openChest: function() {
+//         treasureChests--;
+//         alert('DA DADADA DAAAAAAA!');
+//       }
+//     }
+//   };
+// }();
+// ///////////////////
+// //sandscript.js:
+// CAVESOFCLARITY = function(caves) {
+// var sandScript = '';
+//   caves.setSandScript = function(message){
+//     sandScript += message;
+//   };
+//   return caves;
+// }(CAVESOFCLARITY);
+
+// In simple AUGMENTATION, the MODULE file and the augmentation file DO NOT share their PRIVATE STATE. Augmented module PROPERTIES may only ACCESS the PRIVATE data from their file's CLOSURE. PRIVATE data from the ORIGINAL closure WILL NOT be lost, and WILL be accessible to all original PROPERTIES that referenced it.
+
+
+///COMPLETE 
+// END
